@@ -14,7 +14,9 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: `${base}logo.png` }]],
 
   themeConfig: {
-    logo: `${base}logo.png`,
+    // 以 / 开头即可：VitePress 会对 logo 自动套 withBase() 拼上 base，
+    // 若手动拼 `${base}` 会在子路径部署时重复（/codenect-docs/codenect-docs/logo.png）
+    logo: '/logo.png',
 
     nav: [
       { text: '首页', link: '/' },
