@@ -82,6 +82,14 @@ const sections = [
             <VPLink class="cn-btn cn-btn--ghost" href="/reference/commands"
               >命令速查</VPLink
             >
+            <VPLink
+              class="cn-btn cn-btn--ghost"
+              href="https://github.com/kiiki290"
+              no-icon
+            >
+              <span class="vpi-social-github cn-btn-icon" aria-hidden="true"></span
+              >GitHub
+            </VPLink>
           </div>
           <ul class="cn-hero-points">
             <li>Windows 安装包 / Linux 绿色版，无需 Python</li>

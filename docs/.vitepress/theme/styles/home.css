@@ -129,6 +129,14 @@
   color: var(--cn-accent);
 }
 
+.cn-btn-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  vertical-align: -2px;
+}
+
 .cn-hero-points {
   margin: 0;
   padding: 0;
