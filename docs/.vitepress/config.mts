@@ -1,17 +1,20 @@
 import { defineConfig } from 'vitepress'
 
+// 离线打包用相对路径（scripts/build-offline.mjs 设 DOCS_OFFLINE=1）；
+// GitHub Pages 部署用仓库子路径（workflow 设 DOCS_BASE=/codenect-docs/）
+const base = process.env.DOCS_OFFLINE ? './' : process.env.DOCS_BASE || '/'
+
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CodeNect 文档',
   description: 'CodeNect 使用文档：一个面向开发者的 AI Coding Agent，在终端中理解项目、编写代码、执行命令并协助完成开发任务',
   lastUpdated: true,
-  // 离线打包时用相对路径（scripts/build-offline.mjs 设置 DOCS_OFFLINE=1 构建）
-  base: process.env.DOCS_OFFLINE ? './' : '/',
+  base,
 
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [['link', { rel: 'icon', href: `${base}logo.png` }]],
 
   themeConfig: {
-    logo: '/logo.png',
+    logo: `${base}logo.png`,
 
     nav: [
       { text: '首页', link: '/' },
