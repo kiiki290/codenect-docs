@@ -12,7 +12,7 @@
 
 运行中子代理会在输入框上方出现会话切换栏（`● main ● subagent1 ...`），点击切换；子代理的工具调用只显示在它自己的视图里，主会话只保留 task 派发与最终汇报；**默认停留在 main**（不自动切换），想看在栏里点击；`/new` `/clear` `/load` `/cd` 会清空子代理视图。
 
-<ImagePlaceholder desc="输入框上方的子代理会话切换栏（● main ● subagent1 ...）" />
+![输入框上方的子代理会话切换栏（● main ● subagent1 ...）](../images/subagent状态栏.png)
 
 ## 历史与续跑
 

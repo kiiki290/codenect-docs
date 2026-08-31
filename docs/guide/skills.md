@@ -16,7 +16,7 @@
 - 项目级：`<工作区>/skills/<技能名>/SKILL.md`（同名覆盖全局）
 - 新建技能后需重启会话才会出现在可用列表里
 
-<ImagePlaceholder desc="一个技能包目录的示例结构（SKILL.md + scripts/）" />
+![一个技能包目录的示例结构（SKILL.md + scripts/）](../images/skill目录.png)
 
 ## CODENECT.md 指令文件
 

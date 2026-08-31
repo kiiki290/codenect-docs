@@ -19,6 +19,8 @@
     └── token_usage.csv # Token 流水与费用
 ```
 
+![~/.codenect 用户目录结构](../images/codenect用户目录.png)
+
 ## auth.json — Key 与提供商配置
 
 ```json

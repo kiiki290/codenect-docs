@@ -21,13 +21,3 @@ CodeNect 的运行期数据全部存放在用户目录与工作区内，本页�
 3. `~/.codenect/sessions/<工作区>/` 下最近会话 json（复现上下文）
 4. `token_usage.csv` 尾部（确认调用了哪些模型）
 5. 复现步骤 + 截图 / 文字描述
-
-## 提交材料位置
-
-比赛提交材料即上表中的三项核心数据：
-
-| 材料 | 位置 | 说明 |
-| --- | --- | --- |
-| 会话存档 | `~/.codenect/sessions/<工作区>/<id>.json`（用户目录，不在项目内） | 完整对话，含工具调用和思考内容 |
-| Token 流水 | `~/.codenect/logs/token_usage.csv` | 每次 API 调用明细 |
-| 调试日志 | `~/.codenect/logs/debug.log` | Agent 循环、API 请求 / 响应、错误 |

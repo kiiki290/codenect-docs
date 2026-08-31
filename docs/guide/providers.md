@@ -24,7 +24,7 @@ CodeNect 通过厂商档案机制支持 12 家内置提供商与任意 OpenAI �
 | `/think on` / `/think off` | 开启 / 关闭思考模式（显示灰色推理过程） |
 | `/submodel <模型名>\|off` | 子代理专用模型（off = 继承主模型） |
 
-<ImagePlaceholder desc="/model 命令输出的模型列表（当前模型高亮）" />
+![/model 命令输出的模型列表（当前模型高亮）](../images/model列表.png)
 
 ## 搜索提供商
 

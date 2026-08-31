@@ -1,22 +1,22 @@
 # 快速开始
 
-CodeNect 是运行在终端里的 AI 编程助手：真实 Agent 循环（LLM 原生 tool calling）+ 终端 UI + MCP 外部工具桥接。本页带你完成安装、配置 API Key 并开始第一次对话。
+CodeNect 是一个面向开发者的 AI Coding Agent，在终端中理解项目、编写代码、执行命令并协助完成开发任务。本页带你完成安装、配置 API Key 并开始第一次对话。
 
 ## 环境要求
 
-| 平台 | 运行方式 | 要求 |
-| --- | --- | --- |
-| Windows 10/11 x64 | 安装包 / 绿色版（exe） | 无需 Python |
-| Linux x86_64 | 二进制绿色版（tar.gz） | 无需 Python；glibc ≥ 2.38（Ubuntu 24.04 及更新发行版） |
-| Linux / macOS | 源码运行 | Python 3.10+；快照回滚需 git；Linux 剪贴板兜底建议装 xclip / wl-copy |
+| 平台                | 运行方式           | 要求                                                    |
+| ----------------- | -------------- | ----------------------------------------------------- |
+| Windows 10/11 x64 | 安装包 / 绿色版（exe） | 无需 Python                                             |
+| Linux x86_64      | 二进制绿色版（tar.gz） | 无需 Python；glibc ≥ 2.38（Ubuntu 24.04 及更新发行版）           |
+| Linux / macOS     | 源码运行           | Python 3.10+；快照回滚需 git；Linux 剪贴板兜底建议装 xclip / wl-copy |
 
 可选依赖缺失时功能自动降级，不影响主体使用：
 
-| 依赖 | 缺失时的影响 |
-| --- | --- |
-| git | 文件快照 / 会话回溯中的文件回滚不可用，其余正常 |
-| Python | Agent 无法运行它生成的 pytest 测试，其余正常 |
-| node / npx 等 | 仅配置 MCP stdio 服务器时需要 |
+| 依赖           | 缺失时的影响                        |
+| ------------ | ----------------------------- |
+| git          | 文件快照 / 会话回溯中的文件回滚不可用，其余正常     |
+| Python       | Agent 无法运行它生成的 pytest 测试，其余正常 |
+| node / npx 等 | 仅配置 MCP stdio 服务器时需要          |
 
 ## 安装与启动
 
@@ -57,21 +57,21 @@ pip install -r requirements.txt
 python main.py
 ```
 
-<ImagePlaceholder desc="启动后的 TUI 主界面全貌：顶部状态栏两行、中间对话区、底部输入框" />
+![安装文件展示](../images/Installation-file-display.png)
 
-## 配置 API Key
+## 首次启动&配置 API Key
 
 首次启动时若未配置任何 API Key（且未选择 ollama 等本地厂商），会自动弹出欢迎配置向导：选择提供商 → 模型 → 输入 Key，全程键盘操作（↑↓ / Enter / Esc）。向导可跳过（下次启动再提醒）或选「不再显示」；`/key reset` 清除 Key 后不会重弹。
 
-<ImagePlaceholder desc="首次启动的欢迎配置向导：提供商 → 模型 → Key 三步流程" />
+![首次启动页面](../images/First-launch-page.png)
 
 也可以随时在 TUI 内手动配置：
 
-| 命令 | 说明 |
-| --- | --- |
-| `/key` | 查看已配置的 Key（脱敏显示） |
-| `/key set` | 交互设置 Key（支持 12 家厂商 + 自定义站 + Tavily 搜索） |
-| `/key reset` | 清除所有 Key（删除 auth.json） |
+| 命令           | 说明                                     |
+| ------------ | -------------------------------------- |
+| `/key`       | 查看已配置的 Key（脱敏显示）                       |
+| `/key set`   | 交互设置 Key（支持 12 家厂商 + 自定义站 + Tavily 搜索） |
+| `/key reset` | 清除所有 Key（删除 auth.json）                 |
 
 更多提供商与模型配置见[提供商与模型](/guide/providers)。
 

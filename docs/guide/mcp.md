@@ -35,7 +35,7 @@ CodeNect 可接入外部 MCP 服务器，其工具以 `<服务器名>_<工具名
 | `/mcp disconnect [name]` | 断开服务器（无参 = 全部，工具同步注销） |
 | `/mcp refresh` | 全部断开重连（修改配置文件后重载） |
 
-<ImagePlaceholder desc="/mcp list 的服务器状态输出（名称 / 类型 / 工具数 / 连接状态）" />
+![/mcp list 的服务器状态输出（名称 / 类型 / 工具数 / 连接状态）](../images/mcp列表.png)
 
 ## 行为说明
 

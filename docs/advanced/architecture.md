@@ -74,7 +74,8 @@ _agent_loop (core/agent.py)        ReAct 循环：LLM → tool_calls → 执行 
   └─ AgentTool (core/tools.py)     内置 18 个工具 + MCP 外部工具动态注册
 ```
 
-<ImagePlaceholder desc="Agent 循环流程图：LLM 调用 → 工具调用 → 执行 → 结果回填 → 循环，直到纯文本回复" />
+![Agent 循环流程图（1）](<../images/Agent 循环流程图1.png>)
+![Agent 循环流程图（2）](<../images/Agent 循环流程图2.png>)
 
 ## 关键设计
 

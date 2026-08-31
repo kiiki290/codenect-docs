@@ -1,0 +1,310 @@
+/* 首页（home-custom 布局）全局样式。
+ * 终端配色全部取自主仓库 tui/widgets.py / welcome.py 的真实颜色值，
+ * 与 CodeNect TUI 本体保持一致。 */
+
+:root {
+  /* CodeNect TUI 配色（真实值） */
+  --cn-bg: #161b22;
+  --cn-bg-soft: #1f2b3d;
+  --cn-border: #30363d;
+  --cn-accent: #3c7cea;
+  --cn-blue: #5eb1ef;
+  --cn-green: #65ba74;
+  --cn-green-bright: #9cffb1;
+  --cn-red: #ff4f4f;
+  --cn-fg: #f0f6fc;
+  --cn-dim: #8b949e;
+}
+
+/* 隐藏 VPLocalNav 对自定义布局渲染出的空条（首页无 outline、无侧边栏，
+ * 滚动后会出现一个空的 fixed 背景条） */
+.home-page .VPLocalNav {
+  display: none;
+}
+
+/* ---------- Hero ---------- */
+
+.cn-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 24px 72px;
+}
+
+.cn-hero::before {
+  /* 终端网格背景 + 顶部辉光，跟随明暗主题 */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(128, 128, 128, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 128, 128, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 30%, transparent 75%);
+  pointer-events: none;
+}
+
+.cn-hero-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.cn-hero-info {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.cn-kicker {
+  display: inline-block;
+  margin: 0 0 20px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 14px;
+  color: var(--vp-c-brand-1);
+  border: 1px solid var(--vp-c-brand-soft);
+  border-radius: 6px;
+  padding: 4px 10px;
+  background: var(--vp-c-brand-soft);
+}
+
+.cn-hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--vp-c-text-1);
+}
+
+.cn-hero h1 .cn-accent {
+  color: var(--cn-accent);
+}
+
+.cn-tagline {
+  margin: 0 0 28px;
+  max-width: 34em;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+}
+
+.cn-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cn-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.cn-btn--primary {
+  background: var(--cn-accent);
+  border: 1px solid var(--cn-accent);
+  color: #fff;
+}
+
+.cn-btn--primary:hover {
+  background: #2f6ad1;
+  border-color: #2f6ad1;
+  color: #fff;
+}
+
+.cn-btn--ghost {
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+}
+
+.cn-btn--ghost:hover {
+  border-color: var(--cn-accent);
+  color: var(--cn-accent);
+}
+
+.cn-hero-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+.cn-hero-points li::before {
+  content: '●';
+  margin-right: 7px;
+  color: var(--cn-green);
+  font-size: 11px;
+}
+
+.cn-hero-terminal {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+/* ---------- 特性 ---------- */
+
+.cn-section {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.cn-section-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--vp-c-text-1);
+}
+
+.cn-section-sub {
+  margin: 0 0 32px;
+  font-size: 15px;
+  color: var(--vp-c-text-2);
+}
+
+.cn-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cn-feature {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 20px 20px 18px;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.cn-feature:hover {
+  border-color: var(--cn-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px rgba(60, 124, 234, 0.35);
+}
+
+.cn-feature-title {
+  margin: 0 0 8px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.cn-feature-title::before {
+  content: '$ ';
+  color: var(--cn-green);
+}
+
+.cn-feature-desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--vp-c-text-2);
+}
+
+/* ---------- 分区入口 ---------- */
+
+.cn-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cn-section-card {
+  position: relative;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 20px;
+  background: var(--vp-c-bg-alt);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.cn-section-card:hover {
+  border-color: var(--cn-accent);
+  transform: translateY(-2px);
+}
+
+.cn-section-card h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+
+/* 标题链接拉伸铺满整卡（内部 chip 链接需提升 z-index） */
+.cn-section-card h3 a {
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+}
+
+.cn-section-card h3 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cn-section-card p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+}
+
+.cn-section-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cn-section-links a {
+  font-size: 12.5px;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 3px 10px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cn-section-links a:hover {
+  border-color: var(--cn-accent);
+  color: var(--cn-accent);
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 960px) {
+  .cn-hero-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .cn-hero-info,
+  .cn-hero-terminal {
+    flex: none;
+    width: 100%;
+  }
+
+  .cn-features,
+  .cn-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cn-features,
+  .cn-sections {
+    grid-template-columns: 1fr;
+  }
+}

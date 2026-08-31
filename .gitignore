@@ -1,3 +1,8 @@
 node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+# 离线静态包产物（scripts/build-offline.mjs 生成）
+CodeNect-Docs-离线版/
+CodeNect-Docs-离线版.zip
+# 临时截图
+.tmp_*.png

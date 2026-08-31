@@ -3,8 +3,10 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'zh-CN',
   title: 'CodeNect 文档',
-  description: 'CodeNect 使用文档：真实 Agent 循环（LLM 原生 tool calling）+ 终端 UI + MCP 外部工具桥接',
+  description: 'CodeNect 使用文档：一个面向开发者的 AI Coding Agent，在终端中理解项目、编写代码、执行命令并协助完成开发任务',
   lastUpdated: true,
+  // 离线打包时用相对路径（scripts/build-offline.mjs 设置 DOCS_OFFLINE=1 构建）
+  base: process.env.DOCS_OFFLINE ? './' : '/',
 
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
 

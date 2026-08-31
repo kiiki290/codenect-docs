@@ -42,7 +42,7 @@ Agent 的动手能力来自 18 个内置结构化工具，其中写文件、改�
 
 审批提示只显示工具名与单行参数摘要（`run_shell` 显示命令、`write_file` / `patch_file` 显示路径，均截断到 100 字符），没有内容预览，也没有「全部允许 / 永久记住」入口，拒绝时不附带反馈文字。`plan_enter` / `plan_exit` 确认也走同样的内联选项（`1 是` / `2 否`，前者开启 Plan Mode、后者切换到 Build Mode）。
 
-<ImagePlaceholder desc="黄色边框的工具审批框：工具名 + 单行参数摘要 + 1 允许 / 2 拒绝" />
+![黄色边框的工具审批框：工具名 + 单行参数摘要 + 1 允许 / 2 拒绝](../images/工具审批窗口.png)
 
 审批范围可用 `~/.codenect/tool_approval.json` 调整：任意内置 / MCP 工具可强制审批或豁免（含 `*` 兜底键），详见[配置文件](/reference/files)。
 
@@ -85,7 +85,7 @@ TUI 内可用 `/noapproval on` / `/noapproval off` 即时切换并持久化。�
 
 答案回填格式 `"问题"="答案"`（未答标记「未回答」）；多选题答案以顿号拼接所选选项（如 `"选择配置"="日志增强、性能优化"`），同时勾选了「输入回答」的题，文字答案一并拼接在末尾。
 
-<ImagePlaceholder desc="蓝色外框的 ask_user 问答框：顶部步骤进度条 + 选项列表 + 输入回答行" />
+![蓝色外框的 ask_user 问答框：顶部步骤进度条 + 选项列表 + 输入回答行](../images/askuser窗口.png)
 
 ## 工具结果展示
 
@@ -101,7 +101,7 @@ TUI 内可用 `/noapproval on` / `/noapproval off` 即时切换并持久化。�
 - `search` / `glob` 折叠态与展开态头部显示 `"pattern" → N 处/个文件`（搜索参数 + 结果数量，降级标注 / 无结果 / 截断提示行不计入）；无参数的历史会话回退结果摘要
 - 工具调用头与结果摘要头部：格式化名称（如 `Read (src/auth.py)`、`cmd  echo hi`，run_shell 前缀实际执行 shell 名）；文件类工具（read / write / patch / list）括号显示路径——工作区内为相对路径、工作区外为绝对路径
 
-<ImagePlaceholder desc="工具结果展示示例：patch_file 的 diff 红绿着色 + write_file 的折叠预览" />
+![工具结果展示示例：patch_file 的 diff 红绿着色 + write_file 的折叠预览](../images/工具结果显示.png)
 
 ## run_shell 的行为与安全
 

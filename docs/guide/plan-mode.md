@@ -8,7 +8,7 @@ Plan Mode 将「规划」与「执行」分离：规划阶段 Agent 只读调研
 - **`/build`** — 退出 Plan Mode，切换回正常模式。Agent 可以编辑文件和执行命令，开始实施方案；若方案文件存在，会自动向对话注入「按方案实施」提示。
 - `/new` 创建新会话时自动退出 Plan Mode。
 
-<ImagePlaceholder desc="状态栏上的 PLAN 模式标记" />
+![状态栏上的 PLAN 模式标记](<../images/状态栏上的 PLAN 模式标记.png>)
 
 ## 推荐工作流
 
@@ -18,7 +18,7 @@ Plan Mode 将「规划」与「执行」分离：规划阶段 Agent 只读调研
 4. Agent 调用 `plan_exit` 请求切换：确认后自动进入 Build Mode 按方案实施；拒绝则继续细化方案
 5. 用户也可手动 `/build` 切换实施
 
-<ImagePlaceholder desc="Plan Mode 下 Agent 输出方案文件后的 plan_exit 确认框（1 是 / 2 否）" />
+![Plan Mode 下 Agent 输出方案文件后的 plan_exit 确认框（1 是 / 2 否）](../images/planexit确认框.png)
 
 ## 只读限制细节
 
